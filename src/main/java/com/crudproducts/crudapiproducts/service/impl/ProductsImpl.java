@@ -27,7 +27,7 @@ public class ProductsImpl implements IProducts {
                 .name(productsDto.getName())
                 .description(productsDto.getDescription())
                 .price(productsDto.getPrice())
-                .image(productsDto.getImage())
+                .stock(productsDto.getStock())
                 .build();
         return productsDao.save(products);
     }

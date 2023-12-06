@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
 
 @CrossOrigin(maxAge = 3600)
@@ -55,7 +54,7 @@ public class ProductsController {
                             .name(Productosave.getName())
                             .description(Productosave.getDescription())
                             .price(Productosave.getPrice())
-                            .image(Productosave.getImage())
+                            .stock(Productosave.getStock())
                             .build())
                     .build()
                     ,HttpStatus.MOVED_PERMANENTLY);
@@ -88,7 +87,7 @@ public class ProductsController {
                                 .name(productsUpdate.getName())
                                 .description(productsUpdate.getDescription())
                                 .price(productsUpdate.getPrice())
-                                .image(productsUpdate.getImage())
+                                .stock(productsUpdate.getStock())
                                 .build())
                         , HttpStatus.CREATED);
             }else
@@ -111,8 +110,6 @@ public class ProductsController {
     @DeleteMapping("product/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<?> delete (@PathVariable Long id) {
-
-
         try {
 
             Products productsDelete = productsService.findById(id);
@@ -147,10 +144,9 @@ public class ProductsController {
                         .name(products.getName())
                         .description(products.getDescription())
                         .price(products.getPrice())
-                        .image(products.getImage())
+                        .stock(products.getStock())
                         .build())
                 .build()
                 ,HttpStatus.OK);
-
     }
 }

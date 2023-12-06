@@ -29,6 +29,6 @@ public class Products implements Serializable{
     @Column (name = "price")
     private Double price;
 
-    @Column (name = "image")
-    private String image;
+    @Column (name = "stock")
+    private Integer stock;
 }
