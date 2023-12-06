@@ -9,7 +9,7 @@ CREATE TABLE products (
   name varchar(100) not null,
   description varchar(255) not null,
   price double not null, 
-  istock int not null
+  stock int not null
   )
 
  insert into products (name, description, price, stock) values ("Yogurt", "El mejor yogurt del mundo", 1700, 1000);
